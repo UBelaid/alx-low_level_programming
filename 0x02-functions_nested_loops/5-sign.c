@@ -7,21 +7,47 @@
  * 0 and prints 0 if n is zero
  * -1 and prints - if n is less than zero
  */
+#include <stdio.h>
+
 int print_sign(int n)
 {
-	if (n > 0)
-	{
-		_putchar(43);
-		return (1);
-	}
-       	else if (n == 0)
-        }
-                _putchar(48);
-		return (0);
-	} 
-        else 
-	{
-		_putchar(45);
-		return (-1);
-        }
+    if (n > 0) {
+        putchar('+');
+        return 1;
+    } else if (n < 0) {
+        putchar('-');
+        return -1;
+    } else {
+        putchar('0');
+        return 0;
+    }
 }
+
+int main(void)
+{
+    int r;
+
+    r = print_sign(98);
+    putchar(',');
+    putchar(' ');
+    putchar(r + '0');
+    putchar('\n');
+    r = print_sign(0);
+    putchar(',');
+    putchar(' ');
+    putchar(r + '0');
+    putchar('\n');
+    r = print_sign(0xff);
+    putchar(',');
+    putchar(' ');
+    putchar(r + '0');
+    putchar('\n');
+    r = print_sign(-1);
+    putchar(',');
+    putchar(' ');
+    putchar(r + '0');
+    putchar('\n');
+
+    return 0;
+}
+
